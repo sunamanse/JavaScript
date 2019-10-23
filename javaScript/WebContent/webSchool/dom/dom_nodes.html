@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addRow()">click</button>
+    <button onclick="oneMore()">oneMore</button>
+    <button onclick="removeRow()">removeRow</button>
+    <div id="div1">
+        <p id ="p1">this is paragraph</p>
+        <p id="p2"> another paragraph</p>
+    </div>
+
+    <button onclick="insertBefore1()">insertBefore</button>
+    <table id="tab" border="1">
+        <tr id ="tr1">
+            <td>one</td>
+            <td>two</td>
+        </tr>
+
+    </table>
+
+    
+
+    <script>
+
+        console.log(this);
+
+        function insertBefore1(){
+            var tr1 = document.getElementById("tr1");
+            var td1 = document.createElement("td");
+            td1.appendChild(document.createTextNode("zero"));
+            tr1.insertBefore(td1,document.getElementsByTagName("td")[0]);
+            //해당요소 골라서 걔 앞에서부터 잡아넣을수잇음
+
+            }
+
+
+
+        function removeRow() {
+            var div1 = document.getElementById("div1");
+            var p2 = document.getElementById("p2");
+            div1.removeChild(p2); //부모.removeChild(없앨자식) 해당요소만 제외할때
+            div1.remove(); //자식새끼 다 없앨때
+            // var p3 = document.getElementById("p3");
+            // div1.removeChild("p3");  
+            //새로만든애는 onclick말고 addevent어쩌구로 달아야없어짐
+        }
+
+
+        function addRow(){
+            var elem = document.createElement( "p"); //태그만ㄷ는거(부모)
+            var text = document.createTextNode("new paragraph"); //태그에 들어가는 textnode만드는거(자식)
+            elem.setAttribute("id","p3"); //새로만든 태그에 아이디붙이는거
+            elem.appendChild(text); //<p>new paragraph</p> 만들어짐
+            var div1 = document.getElementById("div1");
+            div1.appendChild(elem); //appendChild = 부모에다 자식 갖다붙이는거 부모.appendChild(자식);
+
+        }
+
+        function oneMore(){
+            var elem = document.createElement("p");
+            var text = document.createTextNode("third paragraph");
+            elem.appendChild(text);
+            var div1 = document.getElementById("div1");
+            div1.appendChild(elem);
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src ="jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#fx").click(function(){
+                creTab();
+            })
+        });
+    </script>
+</head>
+<body>
+   
+    <button id="fx">Create Table</button>
+    <div id="show"></div> 
+    <script>
+        function creTab(){
+            // console.log("되냐?");
+            var tab = $("<table>").html($("<caption>").text("<주소록>"));
+            tab.attr({
+                "id" :"tbl",
+                "border":1
+            })
+            $("#show table").remove();
+
+            
+            
+            var tr =$("<tr>").css("background-color","yellow");
+            
+
+            var th1 =$("<th>").text("이름");
+            var th2 =$("<th>").text("나이");
+            var th3 =$("<th>").text("전화번호");
+            var th4 =$("<th>").text("Del");
+           
+            
+            tr.append(th1,th2,th3,th4);
+           
+            
+
+            var td1 =$("<td>").text("홍길동");
+            var td2 =$("<td>").text("35");
+            var td3 =$("<td>").text("010-0000-1111");
+            var bt =$("<button>").text("Del");
+            var td7 =$("<td>").html(bt.click(delFun));
+
+            var tr1 =$("<tr>");
+            tr1.append(td1,td2,td3,td7);
+
+            var td4 =$("<td>").text("김길동");
+            var td5 =$("<td>").text("40");
+            var td6 =$("<td>").text("010-1111-0000");  
+            bt =$("<button>").text("Del");       
+            var td8 =$("<td>").html(bt.click(delFun));
+             
+            
+            var tr2 =$("<tr>").css("background-color","yellow");
+            tr2.append(td4,td5,td6,td8);
+
+            tab.append(tr,tr1,tr2);
+
+            $("#show").append(tab);
+
+        }
+
+        function delFun(){
+            $(this).parent().parent().remove();
+        }
+
+    
+    </script>
+
+    
+</body>
+</html>

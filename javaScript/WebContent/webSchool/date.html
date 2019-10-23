@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='cal'></div>
+    <script>
+
+        var getmonth = prompt("몇월주까용");
+        var gety = prompt("몇년주까용");
+
+        getCal(gety, getmonth)
+        function getCal(y, m) {
+
+            var d = new Date(y, (m - 1), 1);     //10월1일
+            var l = new Date(y, m - 1, 0);    //10월 마지막날
+
+            //      console.log(d.getFullYear() + "년" + (d.getMonth() + 1) + "월" + d.getDate() + "일" + d.getDay() + "요일");
+
+            var tag = "<h1 align=center>" + y + "년" + m + "월</h1><br>" + "<table border=1; align=center>";
+            tag += "<tr><th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th></tr><tr>";
+            var startday = 0;
+            for (; startday < d.getDay(); startday++) {
+                tag += "<td>" + "*</td>";
+            }
+            console.log(d.getDate());
+            for (var i = 1; i <= l.getDate(); i++) {
+                tag += "<td>" + i + "</td>";
+                if ((startday + i) % 7 == 0) {
+                    tag += ("</tr><tr>");
+                }
+
+            }
+            tag += "</tr></table>";
+            document.getElementById('cal').innerHTML = tag;
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>

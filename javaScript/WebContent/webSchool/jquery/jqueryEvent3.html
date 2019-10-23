@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src ="jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#old").click(function(){
+                newBtn();
+            })
+            // $("#new").click(function(){
+            //     alert("new btn clicked");
+            // })
+            $("body").on("click","#new", function(){
+                alert("new btn clicked");
+            });
+        });
+    
+    </script>
+
+
+</head>
+<body>
+    <p id ="show"></p>
+    <button id="old">OldButton</button>
+    <button id="exist">ExistBtn</button>
+    <div id ="upper">
+        <p>paragraph1</p>
+        <p>2</p>
+    </div>
+    <input type="text" name="firstName" value="scott">
+    <script>
+    
+        function newBtn(){
+            var newBtn = $("<button>").text("newBtn");
+            newBtn.attr("id","new");
+                //<button id ="new">NewBtn</button>
+                //<p>Hellow World</p>
+                //elem.text(),html(),val(),attr("id"),prop("")
+                //elem.text("new world")
+
+                var div = $("<div>").html("<h3>Hello</h3>");    //= .html($("<h3>").text("hello"));
+                $("body").append(div);
+            $("body").prepend(newBtn);   //append = 뒤에붙임 prepend =앞에붙임
+
+            console.log($("input[name]").val());
+
+            $("input[name]").val("Charlie");
+            console.log(newBtn.attr("id"));
+
+            //remove(요소 제거)
+            $("#exist").remove(); 
+            //empty()하위요소 제거
+            $("#upper").empty();
+
+        }
+    
+    </script>
+</body>
+</html>

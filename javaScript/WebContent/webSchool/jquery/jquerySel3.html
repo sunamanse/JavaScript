@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquerySel3.html</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+           $("button").click(function(){
+               $("ul li:first-child").hide();
+           })
+        });
+
+        //(ul li:first) = ul태그 첫번째 li만 사라짐 (list 1의 커피만 사라지고 list 2는 안사라짐)
+        //(ul li:first-child) = ul태그그룹 첫번째 li들 다 사라짐 (list 1, list2 커피 다 사라짐)
+        //(ul li).eq(인덱스 번호) = ul태그의 해당인덱스 li만 사라짐
+
+    </script>
+</head>
+
+<body>
+    <button> click </button>
+    <p>List 1 : </p>
+    <ul>
+        <li>coffe</li>
+        <li>Milk</li>
+        <li>Tea</li>
+
+    </ul>
+
+    <p>List 2 :</p>
+    <ul>
+        <li>coffe</li>
+        <li>Milk</li>
+        <li>Tea</li>
+
+
+    </ul>
+</body>
+
+</html>

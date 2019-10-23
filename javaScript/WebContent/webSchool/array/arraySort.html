@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     var fruits = ['banana','kiwi','durian','mango'];
+        
+    //    console.log(fruits.sort()); //알파벳 순서대로
+    //     console.log(fruits.reverse());  //알파벳 역순으로
+    
+    // var points = [40,100,1,5,25,10,-650];
+    // console.log(points.sort((a,b)=> {return a-b})); 
+    //두수가 있어요 a-b를 했어요 결과가 0보다 작아요 그럼 뒤에값이 더 커요 (작은거부터 큰걸로)(역순으로 하려면 b-a)
+
+    
+    
+    //숫자크기 ㄴㄴ 딕셔너리 순 1~9순으로 
+    
+    var fruits = ["banana", "shinemuscat", "peach", "blueberry"];
+        var newAry = fruits.sort();
+        console.log(fruits);
+        console.log(fruits.reverse()); //sorting된 기준으로 reverse
+
+
+        var points = [40, 100, 1, 5, 20, 15];
+
+        console.log(points);
+
+        console.log("오름차순");
+        console.log(points.sort((a, b) => { return a - b })); //return 값이 양수라면 배열이 b가 a앞으로 (작은 수에서 큰 수로 나열하기 때문에 작은 수가 앞에 와야함)
+        //return b-a일 경우>> 큰 수부터 작은 수 순서대로 나열 
+        //**(1)console.log(points.sort(function(a,b) {return a-b})); //위에 식과 같은 값 표현이 다를 뿐(방법 1)
+
+        // **(2)console.log(points.sort(callFunc));
+        // **function callFunc(a, b) { return a - b }; //정의 구문을 따로 변수 설정하여 적는 것도 가능(방법 2)
+
+        console.log("내림차순");
+        console.log(points.sort(callFunc));
+        function callFunc(a, b) { return b - a };
+
+        console.log("=====================")
+        var cars = [{ type: 'volvo', year: 2016 }, { type: 'saab', year: 2015 }, { type: 'sonata', year: 2018 }];
+
+        console.log("year기준으로 오름차순")
+        console.log(cars.sort(function (a, b) { return a.year - b.year })); //sort()라고만 넣으면 정렬 기준이 없음
+
+        console.log("=====================")
+        console.log("type기준으로 오름차순")
+        console.log(cars.sort(function (a, b) { return a.type - b.type }));
+
+
+
+
+    
+    </script>
+
+
+    
+</body>
+</html>

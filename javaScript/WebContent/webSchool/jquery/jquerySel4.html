@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquerySel4.html</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            // $("#hide").click(function(){
+            //      $("[href]").hide();
+            // })
+            // $("#show").click(function(){
+            //     $("[href]").show();
+            // })
+           $("button:first").click(function(){
+            //    $("a[target!='_blank']").hide();
+               $("a[href$=com]").hide();
+           })
+        });
+    </script>
+</head>
+<body>
+    <button id="show">Click</button>
+    <button id="hide">Click</button>
+    <p>a paragraph</p>
+    <p>another paragraph</p>
+   <p><a href="https://www.daum.net" target="_blank">Daum</a></p>
+   <p><a href="http://www.naver.com" target="parent">Naver</a></p>
+
+    
+</body>
+</html>

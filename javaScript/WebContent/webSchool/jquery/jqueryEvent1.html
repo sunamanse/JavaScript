@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src ="jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#p1").mousedown(function(){
+                $("#show").html("MouseDown over p1").css({"background-color":"red"});
+            })
+            $("#p1").mouseup(function(){
+                $("#show").html("mouseup over p1").css({"background-color":"pink"});
+            })
+            $("#p1").mouseover(function(){
+                $("#show").html("mouseover over p1").css({"background-color":"green"});
+            })
+            $("#p1").mouseout(function(){
+                $("#show").html("mouseovut over p1").css({"background-color":"silver"});
+            })
+            
+        })
+    </script>
+</head>
+<body>
+    <p id ="p1">This is paragraph</p><br><br>
+    <div id ="show"></div>
+    <button>dbclick</button>
+
+    <script>
+        $("button").dblclick(function(){ //dbclick() = 더블클릭 메소드
+            var p1s = $("#p1").html();
+            $("#show").html(p1s);
+        })
+    </script>
+
+</body>
+</html>

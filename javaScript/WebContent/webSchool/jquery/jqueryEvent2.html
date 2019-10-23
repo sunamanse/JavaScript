@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src ="jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#p1").on("click",function(){
+                console.log("p1 clicked")
+            })
+            $("#p1").on({
+                "mousedown":function() {
+                    $("#show").html("mousedown over p1")
+                    .css("background-color","red");
+                },
+                "mouseup":function() {
+                    $("#show").html("mouseup over p1")
+                    .css("background-color","yellow");
+                },
+                "mouseover":function() {
+                    $("#show").html("mouseover over p1")
+                    .css("background-color","pink");
+                },
+                "mouseout":function() {
+                    $("#show").html("mouseout over p1")
+                    .css("background-color","green");
+                }
+            })
+            
+        });
+    </script>
+</head>
+<body>
+    <p id ="p1">This is paragraph</p><br><br>
+    <div id ="show"></div>
+    <button id="bt1">bt1</button>
+    <button id="bt2">bt2</button>
+    Name : <input type="text" name="firstNAme"><br>
+    Email : <input type="email" name="email"><br>
+
+
+
+    <script>
+        $("input").on({
+            "focus":function(){
+                $(this).css("background-color","pink")
+            },
+            "blur":function(){
+                $(this).css("background-color","red")
+            }
+        });
+
+
+        $("#bt1").click(function(){ //
+            $("#p1").click();
+          
+        })
+        $("#bt2").click(function(){
+            $("#p1").trigger("mousedown"); //trigger("이벤트이름") : 해당이벤트 강제 호출
+        })
+    </script>
+
+</body>
+</html>

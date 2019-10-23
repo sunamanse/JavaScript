@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>XmLHttpRequest</h2>
+    <button onclick="loadAjax()">Click</button>
+    <p id ="show"></p>
+
+    <script>
+        function loadAjax(){
+            var xhtp = new XMLHttpRequest(); //서버랑 연결 //객체생성(웹브라우저 내장)
+            xhtp.onreadystatechange = function(){ //onready~ 는 xhtp 상태가 바뀔때마다 변하는 내용을 펑션에 적어줌
+                console.log(this.readyState, this.status);
+                if(this.readyState ==4 && this.status ==200){ //정상적으로 파일 가져왔ㅇㄹ때 상태가 얘
+                    document.getElementById("show").innerHTML=this.responseText;
+                }
+            }
+            xhtp.open("get", "ajax_info.txt");
+            xhtp.send();
+
+        }
+    
+    
+    
+    </script>
+</body>
+</html>

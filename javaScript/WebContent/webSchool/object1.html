@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="father">  </p>
+    <p id ="mother"></p>
+
+
+    <script>
+        function Person(first,last,age) {
+            this.first = first;
+            this.last = last;
+            this.age = age;
+        }
+        var father = new Person("kh","j", 54);
+        var mother = new Person("ch","s",54);
+        document.getElementById('father').innerHTML =father.first + " " + father.last;
+        document.getElementById('mother').innerHTML = mother.first+ " " + mother.last;
+        father.full = function() {
+            return this.first + " " + this.last +" " + this.age;
+        }
+        console.log(father.full());
+        </script>
+    
+</body>
+</html>

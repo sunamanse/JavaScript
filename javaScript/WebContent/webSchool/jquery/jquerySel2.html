@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+
+        //(#아이디이름) = 해당 아이디 가진애만 /(.클래스이름) = 해당 클래스애만 / (*) = 도큐먼트 전부 다 /(body *) = 바디밑에 태그 전부
+        //(태그이름 : first/last) = 태그중 첫번째/마지막애만 / (태그이름).eq(인덱스번호) = 태그 중 인덱스번호 순서인 애만
+        //var 변수 = $(태그이름) = 변수에 해당태그 넣고 변수를 불러도 됨
+
+
+        $(document).ready(function () {   //모든페이지 로딩 후 이거 실행해라~~~(펑션안에 실행할 구문 넣기)
+            // $("#bt1").click(function () {
+            //     $("h2").hide(); //숨기는 메소드hide() (보이는메소드는 show())
+            // })
+            // $("#bt2").click(function(){
+            //     $("h2").show();
+            // });
+            var elem = $("p");
+            elem.click(function(){ 
+                // $(this).hide(); //this = 이벤트를 받는 요소인 애 
+                console.log(this);
+            })
+        });
+
+    </script>
+</head>
+
+<body>
+    <h2> a Heading </h2>
+    <p class="int">a Paragraph</p>
+    <p>a Another</p>
+    <button id ="bt1">click</button>
+    <button id ="bt2">Click</button>
+</body>
+
+</html>

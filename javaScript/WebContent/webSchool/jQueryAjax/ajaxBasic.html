@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery/jquery.min.js"></script>
+    <script>
+        //url : "../../EmpServlet" 
+        //^두개 같은거임
+        //xhtp.onredystatechange = function(){
+        //this.responseText; = function(result)
+        //}
+        //xhtp.open("get","EmpServlet");
+        //xhtp.send();
+        $(document).ready(function(){
+            $.ajax({
+                url: "../../EmpServlet",   //url주소
+                type: "get", //전송방식
+                success: function (result) {   //위에 결과값 제대로 받아왔을때 실행될 function
+                    // console.log(result);
+                    var datas = JSON.parse(result);
+                    console.log(datas);
+                    var ul =$("<ul>").text("<datas>");
+                    for(var i=0; i<datas.length; i++){
+                        ul.append($("<li>").text(datas[i].firstName));       
+                    }
+                    $("#show").append(ul);
+                }
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <p id ="show"></p>
+
+
+
+</body>
+
+</html>

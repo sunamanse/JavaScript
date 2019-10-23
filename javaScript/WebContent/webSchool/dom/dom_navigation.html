@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dom_navigation.html</title>
+</head>
+
+ <body id =bd>   <!--공란이지만 text노드있슴. 하나씩 건너뛰고 쓰기 -->
+    <h1 id="id01">My Page</h1>  <!--얘가 바디 차일드 인덱스 1번-->
+    <h2 id="sc">Second page</h2>    <!--바디 차일드 3번-->
+    Third Page
+    <div id = "div">
+        <h1 id="h1">111111111</h1>
+        <h2 id="h2">222222222222</h2>
+    </div>
+
+    <p style="background-color : red" id="id02"></p>
+    <p style="background-color : blue" id ="id03"></p>
+
+    <script>
+        console.log(this);
+        // document.getElementById("id02").innerHTML = 
+        // document.getElementById("id01").innerHTML;
+
+        // document.getElementById("id02").innerHTML = 
+        // document.getElementById("id01").firstChild.nodeValue;   
+        // //첫번째,마지막은 first,last로 부를수잇음 /nodeValue = 노드의 값 여기서는 마이페이지
+
+        // document.getElementById("id02").innerHTML =
+        // document.getElementById("id01").childNodes[0].nodeValue; 
+        //첫째,막내 제외한애들은 childnodes인덱스값으로 불러야함
+
+        // document.getElementById("id03").innerHTML =
+        // document.getElementById("bd").childNodes[7].childNodes[0].nodeValue;
+
+        // document.getElementById("id03").innerHTML =
+        // document.getElementById("bd").childNodes[4].nodeValue;
+
+        document.getElementById("id03").innerHTML = 
+        document.getElementById("h1").parentNode.parentNode.childNodes[3].childNodes[0].nodeValue;
+
+        document.getElementById("h1").parentNode.previousSibling.previousSibling.nodeValue; //인접형제 선택
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

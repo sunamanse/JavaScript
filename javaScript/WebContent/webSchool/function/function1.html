@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+ 
+
+
+</head>
+<body>
+    <div id = "show1"></div>
+    <div id = "show2"></div>
+
+    <script>
+        var result = calSum(1,4,2,43,23,92);
+        function calSum() {
+            var len = arguments.length;
+            var total=0;
+            for(var i=0; i<len;i++) {
+                total += arguments[i];
+            }
+            return total;
+        }
+        document.getElementById('show1').innerHTML = "sum : " + result;
+        
+        var max = calMax(1,4,2,43,23,92);
+        function calMax() {
+            var len1 = arguments.length;
+            var tot = 0;
+            for(var i =0; i<len1; i++) {
+                if(tot<arguments[i]){
+                    tot = arguments[i];
+                }
+
+            }return tot;
+        }
+        document.getElementById('show2').innerHTML = "max : " + max;
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

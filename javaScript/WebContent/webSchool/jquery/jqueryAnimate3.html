@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        #panel,#flip {
+            padding: 5px;
+            text-align: center;
+            background-color: salmon;
+            border: solid 1px red;
+        }
+        #panel {
+            padding: 50px;
+            display: block;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="flip">click to slide</div>
+    <div id ="panel">Hell</div>
+    <script>
+        $("#flip").on("click",function(){
+            // $("#panel").slideDown(3000); //slideUP :사라짐 /slideDown:보여줌 /slideToggle:껏켜
+            $("#panel").slideToggle(3000);
+
+        });
+    
+    </script>
+
+    
+</body>
+</html>

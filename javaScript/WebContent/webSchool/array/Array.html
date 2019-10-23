@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div id = "show"></div>
+<div id = "arrow"></div>
+<script>
+
+    //배열선언
+    var cars = ['saab','volvo','bmw','benz'];
+    for (var i=0; i<cars.length;) {
+        console.log(cars[i++]);
+    }
+
+
+    console.log("==================================")
+
+    var flowers = new Array('sunflower','rose','lily','tulip');
+    var j=0;
+    for(; j<flowers.length;) { //맨앞에 ;는 j초기값
+       console.log(flowers[j++]); 
+    }
+    flowers[0]= 'moonflower'; //배열 내용물 바꾸기
+
+    var text = "<ul>"
+    for(var i=0; i<flowers.length; ) {
+        text += "<li>" + flowers[i++] + "</li>";
+    }
+    text += "</ul>";
+    document.getElementById("show").innerHTML = text;
+
+    console.log("====================");
+    
+    //배열안에 다른타입 데이터 넣기 쌉가능
+    var myArr = new Array(); 
+    console.log(Date());
+    function myFun() {
+        return 3+5;
+    } 
+    myArr[0] = Date();  //날짜가능
+    myArr[1] = myFun;   //함수가능
+    myArr[2] = cars;    //배열가능
+    
+    for(var i =0; i<myArr.length;i++) {
+        console.log(myArr[i]);
+    }
+
+    console.log(myArr[2][0]);
+    console.log("======================");
+
+    var carSort = cars.sort();
+    console.log(carSort);
+
+    console.log("===========================");
+    flowers.forEach(function(v,i) { //forEach메소드는 배열안에 있는 값 찾아줌
+        console.log(v,i);           //(첫번째값)v 는 vaules (두번째값)i 는 index값
+    });
+
+    var tag = "<table border=1>";
+    tag += "<tr><th>index</th><th>value</th>";
+    flowers.forEach( (v,i) => {         //람다랑 비슷한애(arrow펑션)
+        console.log(v,i);
+        tag += "<tr><td>" + i + "</td><td>" +v +"</td></tr>";
+    });
+    tag += "</table>";
+    document.getElementById("arrow").innerHTML = tag;
+
+</script>
+
+
+    
+</body>
+</html>

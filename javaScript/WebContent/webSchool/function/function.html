@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        function showResult(p1, p2) {
+            document.getElementById('demo').innerHTML = myMulti(p1, p2);
+        }
+
+
+        function myMulti(p1, p2) {
+            return (p1 * p2);
+        }
+    </script>
+
+</head>
+
+
+<body>
+    <div id="demo"> 화씨온도 90은 섭씨 30도</div>
+
+
+
+    <button onclick="document.getElementById
+        ('demo').innerHTML=myMulti(3,5)"> Click
+    </button>
+
+    <!-- <button onclick="myMulti(5,6)"> dd
+    </button>
+
+    <button onclick="showResult(4,8)"> ddd
+    </button> -->
+
+    <script>
+        var myVar = function (a, b) {
+            return a + b;
+        }
+        console.log(myVar(5, 10));
+
+        var localV = 35;
+        function localFun() {
+            console.log("funchtion : localV => " + localV);
+            localV = 50;
+            console.log("funchtion : localV => " + localV);
+
+        }
+        localFun();
+        console.log("localV : " + localV);
+
+            var f = prompt("input fahrenheit: ")
+            var c = (5/9)*(f-32);
+            c = Math.round(c);
+            document.getElementById('demo').innerHTML = "화씨" +f+'는 섭씨' +  c +'입ㄴ디ㅏ.';
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+</body>
+
+</html>

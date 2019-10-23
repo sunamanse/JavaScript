@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+        <button onclick="showUp()">Click</button>
+        <p id="demo">show here</p>
+    <script> //demo를 불러오는 코드의 위치가 중요함: 밑으로 갈 경우 document에서 demo를 불러오는 것이 불가
+        document.write(5+7);
+        window.alert("hi"); //경고창
+        console.log("5+6= ", 5+6)
+        document.getElementById('demo').innerHTML = "Hi"; //show here 대신에 Hi가 들어감
+        console.log(document.getElementById('demo'))
+        </script>
+
+</body>
+</html>

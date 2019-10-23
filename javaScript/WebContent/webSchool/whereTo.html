@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+    <script>
+        function fun1() {
+            document.getElementById('demo').innerHTML='hellow World';
+
+        }
+
+        function funOn() {
+            document.getElementById('img').src="https://www.w3schools.com/js/pic_bulbon.gif"
+        }
+
+        function funOff() {
+            document.getElementById('img').src="https://www.w3schools.com/js/pic_bulboff.gif"
+        }
+
+        function fun2() {
+            document.getElementById('demo').style.fontSize="35px";
+        }
+
+        function fun3() {
+            document.getElementById('demo').style.display='none';
+        }
+    </script>
+
+
+</head>
+<body>
+
+        <p id = 'demo'>javascript can everything </p>
+        <button onclick="fun1()">click</button>
+
+        <br><br><br><br>
+
+        <button onclick="funOn()">turn on</button>
+        <button onclick="funOff()">turn off</button>
+
+        <img id="img" src="https://www.w3schools.com/js/pic_bulboff.gif" style="width: 100px;" >
+
+        <button onclick="sizeUp()"
+        >fontsize</button>
+        <button onclick="hide">hide</button>
+</body>
+</html>

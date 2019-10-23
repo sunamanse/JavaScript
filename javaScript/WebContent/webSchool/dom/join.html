@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+
+
+</head>
+
+<body>
+
+
+    <form id="suna" action="dom.html">
+        <table border="1">
+            <tr>
+                <th align="center"> Name :</th>
+                <td><input type="text" id="Name" value="Name"></td>
+            </tr>
+            <tr>
+                <td align="center"><b> ID : </b></td>
+                <td><input type="text" id="ID" value="ID"></td>
+            </tr>
+
+            <tr>
+                <td align="center"><b>password : </b></td>
+                <td><input type="password" id="PW" value="PW"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" id="show" onclick="login()" value="확인"></button>
+                </td>
+            </tr>
+        </table>
+    </form>
+     <!-- <button id="show1" onclick="login()">확인</button> -->
+    <p id='ab'></p>
+    <p id='bc'></p>
+    <p id='cd'></p>
+
+
+
+
+
+    <script>
+
+        function login() {
+            var x = document.forms["suna"];
+
+            var a = x.elements.namedItem("Name").value;
+            var b = x.elements.namedItem("ID").value;
+            var c = x.elements.namedItem("PW").value;
+
+            // document.getElementById("ab").innerHTML = "<ul><li>입력하신 이름 : " + a + "</li>";
+            // document.getElementById("bc").innerHTML = "<li>니 아이디 : " + b + "</li>";
+            // document.getElementById("cd").innerHTML = "<li>비번 ㅗ: " + c + "</li></ul>";
+            var r = "<ul><li>입력하신 이름 : " + a + "</li>";
+            r += "<li>니 아이디 : " + b + "</li>";
+            r += "<li>비번 ㅗ: " + c + "</li></ul>";
+            document.getElementById("ab").innerHTML = r;
+
+        }
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

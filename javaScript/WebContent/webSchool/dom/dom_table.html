@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body id="bd">
+    <button onclick="createTable()">Create Table</button><br>
+    firstName<input type="text" id="fN" name="firstName"><br>
+    lastName<input type="text" id="lN" name="lastName"><br>
+    salary<input type="text" id="sL" name="salary"><br>
+    <button id="bts">추가</button>
+    <button id = "reb">삭제</button>
+
+    <script>
+
+        var reb = document.getElementById("reb");
+        reb.addEventListener("click",removeData);
+
+        function removeData(){
+            var tr1 = document.getElementsByTagName("tr");
+            var tab = document.getElementById("ta1");
+            tab.removeChild(tr1[1]);
+        }
+
+
+
+        var bts = document.getElementById("bts");
+        bts.addEventListener("click", addData);
+
+
+        function addData() {
+
+            // var tab = document.getElementById("$table");
+          
+            var f = document.getElementById("fN").value;
+            var l = document.getElementById("lN").value;
+            var s = document.getElementById("sL").value;
+
+            var tdd1 = document.createElement("td");
+            var fn = document.createTextNode(f);
+            tdd1.appendChild(fn);
+
+            var tdd2 = document.createElement("td");
+            var ln = document.createTextNode(l);
+            tdd2.appendChild(ln);
+
+            var tdd3 = document.createElement("td");
+            var sl = document.createTextNode(s);
+            tdd3.appendChild(sl);
+
+            var tdd4 = document.createElement("button");
+            var bt = document.createTextNode("Del");
+            tdd4.appendChild(bt);
+            tdd4.addEventListener("click",delFun);
+
+            var rows = document.getElementsByTagName("tr");
+            var rowID = rows.length;
+            tdd4.setAttribute("id",rowID);
+
+            var tr2 = document.createElement("tr");
+
+            tr2.setAttribute("id","tr"+rowID);
+            tr2.append(tdd1, tdd2, tdd3,tdd4);
+            tr2.addEventListener("click",function(delFun){console.log(this.getAttribute("id")) });
+
+            tab = document.getElementById("ta1");
+            tab.append(tr2);
+
+        }
+
+        function delFun(){
+            //this = button / button의 부모.아이디 내ㅇ놔라 -> del누르면 tr2~3456.. 나옴
+            console.log(this.parentNode.getAttribute("id"));
+            var id = this.parentNode.getAttribute("id");
+            var trID = document.getElementById(id);
+            console.log(trID);
+            trID.remove();
+            
+
+        }
+
+
+        function createTable() {
+            var $table = document.createElement("table"); //예약어를 변수명으로 쓰고싶을때 앞에 $붙이기
+            $table.setAttribute("id", "ta1");
+            $table.setAttribute("border", "1");
+            //속성여러개쓰고싶을때 {속성명 : 속성값 , 속성명 : 속성값 } 하시기
+
+            var th1 = document.createElement("th");
+            var val1 = document.createTextNode("firstName");
+            th1.appendChild(val1);
+
+            var th2 = document.createElement("th")
+            var val2 = document.createTextNode("lastLame");
+            th2.appendChild(val2);
+
+            // .appendChild(document.createTextNode);
+            var th3 = document.createElement("th")
+            var val3 = document.createTextNode("salary");
+            th3.appendChild(val3);
+
+            // .appendChild(document.createTextNode("salary"));
+            var tr = document.createElement("tr");
+            tr.append(th1, th2, th3); //자식만붙이기
+            $table.append(tr);  //자식아닌애도 붙이기
+
+            document.getElementById("bd").append($table);
+
+            // var td1 = document.createElement("td");
+            // var vall1 = document.createTextNode("suna");
+            // td1.appendChild(vall1);
+
+            // var td2 = document.createElement("td");
+            // var vall2 = document.createTextNode("jo");
+            // td2.appendChild(vall2);
+
+            // var td3 = document.createElement("td");
+            // var vall3 = document.createTextNode("50000");
+            // td3.appendChild(vall3);
+
+            // var tr1 = document.createElement("tr");
+            // tr1.append(td1, td2, td3);
+            // $table.append(tr1);
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

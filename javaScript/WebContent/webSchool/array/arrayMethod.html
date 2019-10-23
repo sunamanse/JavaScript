@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var fruits = ['banana','apple','orange','mange'];
+        //pop(last),shift(first)
+        var len = fruits.length;
+        // for(var i=0; i<len; i++) {
+        //     console.log(fruits.join(",")); //배열안에 값을 join안에 문자로 연결할거임
+        //  //   fruits.pop(); //뒤에꺼부터 하나씩 뺌
+        //     fruits.shift();
+        // }
+
+        console.log("============================");
+
+        //push(last) unshift(first)
+        fruits.push("kiwi"); //맨뒤에 추가
+        fruits.unshift("strawberry");   //맨앞에 추가
+        console.log(fruits.join(","));
+
+        fruits[fruits.length] = "melon"; //순차적으로 뒤에서부터 추가
+        fruits[20] = "grape"; //공란은 null처리되고 20번째에 저장
+        fruits[fruits.length] = "lemon";
+        console.log(fruits.join(","));
+
+    </script>
+
+
+
+
+    
+</body>
+</html>

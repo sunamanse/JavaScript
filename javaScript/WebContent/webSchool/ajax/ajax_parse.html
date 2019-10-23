@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>진짜 하기싫다</h2>    
+    <p id="sibla" ></p>
+
+    <script>
+
+
+            var xhtp = new XMLHttpRequest();
+            xhtp.onreadystatechange = function () {
+                if (xhtp.readyState == 4 && xhtp.status == 200) {
+
+                    // console.log(this.responseText);
+                    var obj = JSON.parse(xhtp.responseText);
+                    console.log(obj);
+
+                    var tab = document.createElement("table");
+                    tab.setAttribute("id", "tab");
+                    tab.setAttribute("border", "1");
+
+                    var th1 = document.createElement("th");
+                    var val1 = document.createTextNode("ID");
+                    th1.appendChild(val1);
+
+                    var th2 = document.createElement("th");
+                    var val2 = document.createTextNode("First_Name");
+                    th2.appendChild(val2);
+
+                    var th3 = document.createElement("th");
+                    var val3 = document.createTextNode("last_Name");
+                    th3.appendChild(val3);
+
+                    var th4 = document.createElement("th");
+                    var val4 = document.createTextNode("email");
+                    th4.appendChild(val4);
+
+                    var th5 = document.createElement("th");
+                    var val5 = document.createTextNode("Gender");
+                    th5.appendChild(val5);
+
+                    var th6 = document.createElement("th");
+                    var val6 = document.createTextNode("ip_address");
+                    th6.appendChild(val6);
+
+                    var th7 = document.createElement("th");
+                    var val7 = document.createTextNode("Del");
+                    th7.appendChild(val7);
+
+
+                    var tr = document.createElement("tr");
+                    tr.append(th1, th2, th3, th4, th5, th6,th7);
+                    tab.append(tr);
+
+                    for (var i = 0; i < obj.length; i++) {
+                        var tr1 = document.createElement("tr");
+                        var td1 = document.createElement("td");
+                        var tdval1 = document.createTextNode(obj[i].id);
+                        td1.appendChild(tdval1);
+
+                        var td2 = document.createElement("td");
+                        var tdval2 = document.createTextNode(obj[i].first_name);
+                        td2.appendChild(tdval2);
+
+
+                        var td3 = document.createElement("td");
+                        var tdval3 = document.createTextNode(obj[i].last_name);
+                        td3.appendChild(tdval3);
+
+                        var td4 = document.createElement("td");
+                        var tdval4 = document.createTextNode(obj[i].email);
+                        td4.appendChild(tdval4);
+
+                        var td5 = document.createElement("td");
+                        var tdval5 = document.createTextNode(obj[i].gender);
+                        td5.appendChild(tdval5);
+
+                        var td6 = document.createElement("td");
+                        var tdval6 = document.createTextNode(obj[i].ip_address);
+                        td6.appendChild(tdval6);
+
+                      
+                        var td7 = document.createElement("button");
+                        var tdval7 = document.createTextNode("Del");
+                        td7.appendChild(tdval7);
+                        td7.addEventListener("click", delFun);       
+
+                        var rowID = i + 1;
+                        td7.setAttribute("id", rowID);
+
+                        tr1.setAttribute("id", "tr" + rowID);
+                        console.log(tr1);
+
+                        tr1.append(td1, td2, td3, td4, td5, td6, td7);
+
+                        tr1.addEventListener("click",
+                            function (delFun) {
+                                console.log(this.getAttribute("id"))
+                            });
+
+                        tab.append(tr1);
+
+                        document.getElementById("sibla").append(tab);
+
+
+
+                        //-----------------------------------------
+                        // console.log("name => " , obj.name);
+                        // console.log("age =>" ,obj.age);
+                        // console.log("pets=>" , obj.pets[0].animal, obj.pets[0].name);
+
+
+
+                    }
+
+                }
+            }
+            xhtp.open("get", "MOCK_DATA.json");
+            xhtp.send();
+
+
+
+
+        function delFun(){
+            //this = button / button의 부모.아이디 내ㅇ놔라 -> del누르면 tr2~3456.. 나옴
+            console.log(this.parentNode.getAttribute("id"));
+            var id = this.parentNode.getAttribute("id");
+            var trID = document.getElementById(id);
+            console.log(trID);
+            trID.remove();
+            
+
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
